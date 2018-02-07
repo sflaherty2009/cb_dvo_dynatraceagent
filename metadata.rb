@@ -1,0 +1,13 @@
+name 'cb_dvo_dynatraceAgent'
+maintainer 'Matthew Oleksowicz'
+maintainer_email 'matt_oleksowicz@trekbikes.com'
+license 'All Rights Reserved 2018, Trek Bicycle Corporation'
+description 'Installs/Configures cb_dvo_dynatraceAgent'
+long_description 'Installs/Configures cb_dvo_dynatraceAgent'
+version '0.0.1'
+issues_url 'https://bitbucket.org/trekbikes/cb_dvo_dynatraceagent/issues'
+source_url 'https://bitbucket.org/trekbikes/cb_dvo_dynatraceagent'
+chef_version '>=12'
+supports 'centos'
+
+depends 'windows', '>= 3.4.4'

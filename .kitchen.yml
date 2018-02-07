@@ -1,0 +1,56 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7.3
+  - name: trek/Windows2012R2
+    os_type: windows
+    shell_type: powershell
+    communicator: winrm
+    transport:
+      name: winrm
+      username: vagrant
+      password: vagrant
+    driver:
+      box: trek/windows2012r2
+      box_url: https://aztrksaslh00public01.blob.core.windows.net/vagrant/windows/2012r2/windows2012r2min-virtualbox.box
+      network:
+        - ['private_network', {ip: '192.168.57.21'}]
+
+  - name: trek/Windows2016
+    os_type: windows
+    shell_type: powershell
+    communicator: winrm
+    transport:
+      name: winrm
+      username: vagrant
+      password: vagrant
+    driver:
+      box: trek/Windows2016
+      box_url: https://aztrksaslh00public01.blob.core.windows.net/vagrant/windows/2016/windows2016min-virtualbox.box
+      network:
+        - ['private_network', {ip: '192.168.57.22'}]
+
+suites:
+  - name: default
+    run_list:
+      - recipe[cb_dvo_dynatraceAgent::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+      dvo_user:
+        use: "linux dynatrace"
+        ALM_environment: "local"
+        ALM_service: "dynatrace"
