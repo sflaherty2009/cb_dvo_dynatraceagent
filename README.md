@@ -5,8 +5,8 @@
 
 # Environment Pinning
 
-* production: 0.0.1
-* staging: 0.0.1
+* production: 1.0.0
+* staging: 1.0.0
 * testing: latest
 * development: latest
 
@@ -23,17 +23,27 @@
 
 ## Dependent Cookbooks
 
-* dynatrace-appmon
+* None
 
 ## Attributes (significant)
 
 # Recipes
 
 ## cb_dvo_dynatraceAgent::Default
+## cb_dvo_dynatraceAgent::Uninstall
 
 # Usage
 
-  "run_list": "recipe['cb_dvo_dynatraceAgent']",
+  Install: "run_list": "recipe['cb_dvo_dynatraceAgent']"
+  Uninstall: Most likely manually add to the run list with knife.
+  e.g. (to uninstall for all nodes at next chef-client run in a particular environment from a shell)
+  ```
+  for node in $(knife search node "ALM_environment:ss AND recipes:cb_dvo_dynatraceAgent" -i); do
+    knife node run_list add $node "recipe[cb_dvo_dynatraceAgent::uninstall]" -a "recipe[cb_dvo_dynatraceAgent]";
+    knife node run_list remove $node "recipe[cb_dvo_dynatraceAgent]";
+  done
+  ```
+
 
 ## After provisioning
 

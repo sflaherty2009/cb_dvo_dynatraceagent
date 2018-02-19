@@ -4,8 +4,8 @@
 #
 # Copyright (c) 2018 Trek Bikes, Ray Crawford, Matt Oleksowicz, All Rights Reserved.
 
-if node['dvo_user']['use'] =~ /\bsql\b/ && node.chef_environment == 'production'
-  node.default['dvo_user']['dynatrace']['infra_only_windows'] = 'INFRA_ONLY=\"1\"'
+if node['dvo_user']['use'] =~ /\bdatabase\b/
+  node.default['dvo_user']['dynatrace']['infra_only_windows'] = 'ALLOW_INFRASTRUCTURE_ONLY="1" INFRA_ONLY="1"'
 end
 
 remote_file node['dvo_user']['dynatrace']['windows_installer_archive'] do
@@ -29,7 +29,6 @@ ruby_block 'Find Install File' do
         node.run_state['installer'] = "#{Chef::Config[:file_cache_path]}/dynatrace/#{item}"
       end
     end
-    Chef::Log.warn(node.run_state['installer'])
   end
   not_if { ::Win32::Service.exists?('Dynatrace OneAgent') }
 end
