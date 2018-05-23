@@ -1,3 +1,8 @@
+# 1.0.2
+**Date: 5/23/2018**
+
+* Modified to set infrastructure only to 1 when MSSQLSERVER service is present.
+
 # 1.0.0
 **Date: 2/16/2018**
 

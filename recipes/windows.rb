@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2018 Trek Bikes, Ray Crawford, Matt Oleksowicz, All Rights Reserved.
 
-if node['dvo_user']['use'] =~ /\bdatabase\b/
+if ::Win32::Service.exists?('MSSQLSERVER')
   node.default['dvo_user']['dynatrace']['infra_only_windows'] = 'ALLOW_INFRASTRUCTURE_ONLY="1" INFRA_ONLY="1"'
 end
 
