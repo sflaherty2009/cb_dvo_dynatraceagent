@@ -1,6 +1,7 @@
 {
-  "cb_dvo_tdcPd": {
+  "cb_dvo_dynatraceAgent": {
     "production": "1.0.3",
-    "staging": "1.0.3"
+    "staging": "1.0.3",
+    "testing": "1.0.3"
   }
 }
