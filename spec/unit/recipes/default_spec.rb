@@ -1,12 +1,12 @@
 #
-# Cookbook:: cb_dvo_dynatraceAgent
+# Cookbook:: cb_dvo_dynatraceagent
 # Spec:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'cb_dvo_dynatraceAgent::default' do
+describe 'cb_dvo_dynatraceagent::default' do
   context 'When all attributes are default, on an Ubuntu 16.04' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:

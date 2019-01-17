@@ -4,6 +4,9 @@ driver:
 
 provisioner:
   name: chef_zero
+  product_name: chef
+  product_version: 14
+  install_strategy: always
   # You may wish to disable always updating cookbooks in CI or other testing environments.
   # For example:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
@@ -45,7 +48,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[cb_dvo_dynatraceAgent::default]
+      - recipe[cb_dvo_dynatraceagent::default]
     verifier:
       inspec_tests:
         - test/smoke/default
