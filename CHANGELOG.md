@@ -1,3 +1,8 @@
+# 1.0.4
+**Date: 1/21/2019**
+
+* Skipped unit testing.
+
 # 1.0.3
 **Date: 1/16/2019**
 
