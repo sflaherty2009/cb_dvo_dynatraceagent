@@ -1,5 +1,5 @@
 #
-# Cookbook:: cb_dvo_dynatraceAgent
+# Cookbook:: cb_dvo_dynatraceagent
 # Recipe:: windows
 #
 # Copyright (c) 2018 Trek Bikes, Ray Crawford, Matt Oleksowicz, All Rights Reserved.
@@ -15,9 +15,11 @@ remote_file node['dvo_user']['dynatrace']['windows_installer_archive'] do
   action :create
 end
 
-windows_zipfile "#{Chef::Config[:file_cache_path]}/dynatrace" do
-  source "#{Chef::Config[:file_cache_path]}/#{node['dvo_user']['dynatrace']['windows_installer_archive']}"
-  action :unzip
+powershell_script 'Unzip dynatrace' do
+  code <<-EOH
+    [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+    [System.IO.Compression.ZipFile]::ExtractToDirectory('#{Chef::Config[:file_cache_path]}/#{node['dvo_user']['dynatrace']['windows_installer_archive']}', '#{Chef::Config[:file_cache_path]}/dynatrace')
+  EOH
   not_if { ::File.directory?("#{Chef::Config[:file_cache_path]}/dynatrace") }
 end
 

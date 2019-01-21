@@ -1,3 +1,10 @@
+# 1.0.3
+**Date: 1/16/2019**
+
+* Removed the windows cookbook dependency.
+* Removed windows_zipfile resource.
+* Renamed cookbook to lowercase.
+
 # 1.0.2
 **Date: 5/23/2018**
 

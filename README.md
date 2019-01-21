@@ -1,4 +1,4 @@
-# cb_dvo_dynatraceAgent
+# cb_dvo_dynatraceagent
 
 * Installs the Dynatrace OneAgent
 * May require application restarts to take full effect
@@ -29,18 +29,18 @@
 
 # Recipes
 
-## cb_dvo_dynatraceAgent::Default
-## cb_dvo_dynatraceAgent::Uninstall
+## cb_dvo_dynatraceagent::Default
+## cb_dvo_dynatraceagent::Uninstall
 
 # Usage
 
-  Install: "run_list": "recipe['cb_dvo_dynatraceAgent']"
+  Install: "run_list": "recipe['cb_dvo_dynatraceagent']"
   Uninstall: Most likely manually add to the run list with knife.
   e.g. (to uninstall for all nodes at next chef-client run in a particular environment from a shell)
   ```
-  for node in $(knife search node "ALM_environment:ss AND recipes:cb_dvo_dynatraceAgent" -i); do
-    knife node run_list add $node "recipe[cb_dvo_dynatraceAgent::uninstall]" -a "recipe[cb_dvo_dynatraceAgent]";
-    knife node run_list remove $node "recipe[cb_dvo_dynatraceAgent]";
+  for node in $(knife search node "ALM_environment:ss AND recipes:cb_dvo_dynatraceagent" -i); do
+    knife node run_list add $node "recipe[cb_dvo_dynatraceagent::uninstall]" -a "recipe[cb_dvo_dynatraceagent]";
+    knife node run_list remove $node "recipe[cb_dvo_dynatraceagent]";
   done
   ```
 
