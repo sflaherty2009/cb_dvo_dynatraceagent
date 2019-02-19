@@ -1,6 +1,6 @@
 {
   "cb_dvo_dynatraceagent": {
-    "production": "1.0.3",
+    "production": "1.0.4",
     "staging": "1.0.4",
     "testing": "1.0.4"
   }
