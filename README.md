@@ -63,8 +63,3 @@
 
 Managed via feature branch pull requests.  Must pass all tests and include new tests for additional functionality/templates.
 
-# License & Authors
-
-**Aurthor:** Matt Oleksowicz (Matthew_Oleksowicz@trekbikes.com)
-
-**Copyright:** 2018, The Trek Bicycle Corporation, All Rights Reserved

@@ -2,7 +2,7 @@
 # Cookbook:: cb_dvo_dynatraceagent
 # Recipe:: windows
 #
-# Copyright (c) 2018 Trek Bikes, Ray Crawford, Matt Oleksowicz, All Rights Reserved.
+# Copyright (c) 2018 example , Ray Crawford, Matt Oleksowicz, All Rights Reserved.
 
 windows_package 'Dynatrace OneAgent' do
   action :remove

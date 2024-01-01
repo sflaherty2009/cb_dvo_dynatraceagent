@@ -2,7 +2,7 @@
 # Cookbook:: cb_dvo_dynatraceagent
 # Recipe:: windows
 #
-# Copyright (c) 2018 Trek Bikes, Ray Crawford, Matt Oleksowicz, All Rights Reserved.
+# Copyright (c) 2018 example , Ray Crawford, Matt Oleksowicz, All Rights Reserved.
 
 if ::Win32::Service.exists?('MSSQLSERVER')
   node.default['dvo_user']['dynatrace']['infra_only_windows'] = 'ALLOW_INFRASTRUCTURE_ONLY="1" INFRA_ONLY="1"'

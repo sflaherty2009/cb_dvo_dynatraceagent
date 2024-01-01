@@ -2,7 +2,7 @@
 # Cookbook:: cb_dvo_dynatraceagent
 # Recipe:: default
 #
-# Copyright (c) 2018 Trek Bikes, Matthew Oleksowicz, All Rights Reserved.
+# Copyright (c) 2018 example , Matthew Oleksowicz, All Rights Reserved.
 
 case node['os']
 when 'linux'

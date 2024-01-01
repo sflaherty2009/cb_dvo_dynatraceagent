@@ -2,7 +2,7 @@
 # Cookbook:: cb_dvo_dynatraceagent
 # Recipe:: uninstall
 #
-# Copyright (c) 2018 Trek Bikes, Matthew Oleksowicz, All Rights Reserved.
+# Copyright (c) 2018 All Rights Reserved.
 
 case node['os']
 when 'linux'
